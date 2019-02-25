@@ -1,0 +1,201 @@
+# Appearance
+exec_always swaymsg gaps edge_gaps off
+exec_always swaymsg gaps 18
+
+gaps edge_gaps off
+gaps 15 
+
+default_border none
+default_floating_border px 1
+
+# keys
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+# applications
+set $browser firefox
+set $editor nvim
+set $ide subl
+set $mail mailspring
+set $menu ulauncher
+set $screenshot swaygrab
+set $term termite
+# custom script in /usr/local/bin
+set $volumecontrol volume_control
+
+# Default wallpaper
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Pictures/minimal.jpg center
+
+# Key bindings:
+
+    # start ide of choice 
+    bindsym $mod+i exec $ide
+
+    # start mail client
+    bindsym $mod+m exec $mail
+
+    # start browser
+    bindsym $mod+w exec $browser
+
+    # start a terminal
+    bindsym $mod+Return exec $term
+
+    # screenshot
+    bindsym $mod+g exec $screenshot
+
+    # default editor
+    bindsym $mod+n exec $term -e $editor
+
+    # kill focused window "mod + F4"
+    bindsym $mod+XF86LaunchB kill
+    bindsym $mod+F4 kill
+
+    # volume control
+    bindsym $mod+F10 exec $volumecontrol mute
+    bindsym $mod+F11 exec $volumecontrol down 1
+    bindsym $mod+F12 exec $volumecontrol up 1
+
+    # start your launcher "mod + F2"
+    bindsym $mod+XF86MonBrightnessUp exec env GDK_BACKEND=x11 $menu
+    bindsym $mod+F2 exec env GDK_BACKEND=x11 $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    floating_modifier $mod normal
+
+    # reload the configuration file
+    bindsym $mod+Shift+r reload
+
+    # exit sway (logs you out of your wayland session)
+    bindsym $mod+Shift+e exit
+
+
+# Moving around:
+
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # _move_ the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+
+# Workspaces:
+
+    # switch to workspace
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace 2
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
+    bindsym $mod+6 workspace 6
+    bindsym $mod+7 workspace 7
+    bindsym $mod+8 workspace 8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+0 workspace 10
+    
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9
+    bindsym $mod+Shift+0 move container to workspace 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+
+# Layout stuff:
+
+    # splits
+    bindsym $mod+h splith
+    bindsym $mod+v splitv
+
+    # layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+t layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # fullscreen
+    bindsym $mod+f fullscreen
+
+    # toggle tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # swap between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # move focus to the parent container
+    bindsym $mod+a focus parent
+
+
+# Scratchpad:
+
+    # move focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # show the next scratchpad window or hide the focused scratchpad window.
+    bindsym $mod+minus scratchpad show
+
+
+# Resizing containers:
+
+mode "resize" {
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# Status Bar:
+
+bar {
+    swaybar_command swaybar
+    status_command i3status
+    mode hide
+    hidden_state hide
+    modifier Mod4
+    position top
+    colors {
+        statusline #ffffff
+        background #32323299
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+include /etc/sway/config.d/*
