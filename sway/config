@@ -24,7 +24,7 @@ set $menu ulauncher
 set $screenshot swaygrab
 set $term termite
 # custom script in /usr/local/bin
-set $volumecontrol volume_control
+set $volumecontrol pasc
 
 # Default wallpaper
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
