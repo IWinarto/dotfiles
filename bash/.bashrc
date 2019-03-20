@@ -32,7 +32,7 @@ push_dots() {
 
 set_prompts
 
-# just for easy referencing when deownloading from the AUR 
+# just for easy referencing when downloading from the AUR 
 AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
