@@ -31,6 +31,7 @@ push_dots() {
 
 
 set_prompts
+unset -f set_prompts
 
 # just for easy referencing when downloading from the AUR 
 AUR='https://aur.archlinux.org'
