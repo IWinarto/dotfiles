@@ -187,8 +187,8 @@ bindsym $mod+r mode "resize"
 bar {
     swaybar_command swaybar
     status_command i3status
-    mode hide
-    hidden_state hide
+    mode dock
+    # hidden_state hide
     modifier Mod4
     position top
     colors {
