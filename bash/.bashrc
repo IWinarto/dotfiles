@@ -21,3 +21,16 @@ alias pacupdate='sudo pacman -Syu'
 alias pacclean='sudo pacman -Rnss $(pacman -Qtdq)'
 alias ls='ls --color=auto'
 alias cds='cd ~/Programming/Shell/'
+alias pushdots='push_dots'
+
+push_dots() {
+    local repo='~/Repositories/dotfiles/'
+    eval repo=$repo
+    if [[ -z $1 ]]; then
+        local message='Update some dot file(s)'
+    else
+        local message=$1
+    fi
+    git -C $repo commit -a -m "$message"
+    git -C $repo push
+}
