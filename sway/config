@@ -2,11 +2,11 @@
 exec_always swaymsg gaps edge_gaps off
 exec_always swaymsg gaps 18
 
-gaps edge_gaps off
-gaps 15 
+# gaps edge_gaps off
+gaps inner 15 
 
 default_border none
-default_floating_border px 1
+default_floating_border pixel 1
 
 # keys
 set $mod Mod4
@@ -131,7 +131,7 @@ output * bg ~/Pictures/minimal.jpg center
 # Layout stuff:
 
     # splits
-    bindsym $mod+h splith
+    bindsym $mod+c splith
     bindsym $mod+v splitv
 
     # layout styles
