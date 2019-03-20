@@ -17,10 +17,10 @@ PS1="\e[${FOREGROUND};${PS1_COLOR}m\u${PS1_SYMBOL}\w ${PS2}"
 # just for easy referencing when deownloading from the AUR 
 AUR='https://aur.archlinux.org'
 
+alias cds='cd ~/Programming/Shell/'
+alias ls='ls --color=auto'
 alias pacupdate='sudo pacman -Syu'
 alias pacclean='sudo pacman -Rnss $(pacman -Qtdq)'
-alias ls='ls --color=auto'
-alias cds='cd ~/Programming/Shell/'
 alias pushdots='push_dots'
 
 push_dots() {
