@@ -38,10 +38,6 @@ AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
 alias ls='ls --color=auto'
-alias pacupdate='sudo pacman -Syu'
 alias pacclean='sudo pacman -Rnss $(pacman -Qtdq)'
+alias pacupdate='sudo pacman -Syu'
 alias pushdots='push_dots'
-
-
-
-
