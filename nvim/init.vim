@@ -83,16 +83,16 @@ au ColorScheme * hi EndOfBuffer ctermbg=none guibg=none
 " colorscheme onedark
 " colorscheme codedark
 " colorscheme jellybeans
-colorscheme apprentice
+" colorscheme apprentice
 " let g:jellybeans_use_term_italics = 1
 " colorscheme palenight
 " let g:palenight_terminal_italics=1
 " colorscheme OceanicNext
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
-" colorscheme spacegray
-" let g:spacegray_use_italics = 1
-" let g:spacegray_low_contrast = 1
+colorscheme spacegray
+let g:spacegray_use_italics = 1
+let g:spacegray_low_contrast = 1
 
 let g:lightline = { 'colorscheme': 'wombat', } 
 
