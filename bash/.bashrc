@@ -20,12 +20,7 @@ set_prompts() {
 push_dots() {
     local repo='~/Repositories/dotfiles/'
     eval repo=$repo
-    if [[ -z $1 ]]; then
-        local message='Update some dot file(s)'
-    else
-        local message=$1
-    fi
-    git -C $repo commit -a -m "$message"
+    git -C $repo commit -a -m "${1:-Update some dot file(s)}"
     git -C $repo push
 }
 
