@@ -18,7 +18,8 @@ set $right l
 # applications
 set $browser firefox
 set $editor nvim
-set $ide subl
+set $ide1 code
+set $ide2 subl
 set $mail mailspring
 set $menu ulauncher
 set $screenshot swaygrab
@@ -33,7 +34,10 @@ output * bg ~/Pictures/minimal.jpg center
 # Key bindings:
 
     # start ide of choice 
-    bindsym $mod+i exec $ide
+    bindsym $mod+i exec $ide1
+
+    # vs-code
+    bindsym $mod+p exec $ide2
 
     # start mail client
     bindsym $mod+m exec $mail
