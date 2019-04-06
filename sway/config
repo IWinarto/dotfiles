@@ -23,7 +23,7 @@ set $ide2 subl
 set $mail mailspring
 set $menu ulauncher
 set $screenshot swaygrab
-set $term alacritty
+set $term termite
 # custom script in /usr/local/bin
 set $volumecontrol pasc
 
