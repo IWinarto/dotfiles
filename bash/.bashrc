@@ -25,6 +25,17 @@ push_dots() {
 }
 
 
+pac_clean() {
+    # sudo pacman -Scc
+    sudo pacman -Scc
+
+    local to_clean=$(pacman -Qtdq)
+    if [[ ! -z $to_clean ]]; then
+        pacman -Rnss $to_clean
+    fi
+} 
+
+
 set_prompts
 unset -f set_prompts
 
@@ -33,6 +44,6 @@ AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
 alias ls='ls --color=auto'
-alias pacclean='sudo pacman -Rnss $(pacman -Qtdq)'
+alias pacclean='pac_clean'
 alias pacupdate='sudo pacman -Syu'
 alias pushdots='push_dots'
