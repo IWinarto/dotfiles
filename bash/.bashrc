@@ -20,7 +20,7 @@ set_prompts() {
 push_dots() {
     local repo='~/Repositories/dotfiles/'
     eval repo=$repo
-    git -C $repo commit -a -m "${1:-Update some dot file(s)}"
+    git -C $repo commit -a -m "${*:-Update some dot file(s)}"
     git -C $repo push
 }
 
