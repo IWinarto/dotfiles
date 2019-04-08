@@ -23,7 +23,7 @@ set_prompts() {
     local PS1_SYMBOL=' '
     local PS2_SYMBOL='>>'
 
-    local PS1_COLOR=110
+    local PS1_COLOR=147
     local PS2_COLOR=202
 
     local RESET='0'
