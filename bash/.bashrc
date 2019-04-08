@@ -1,5 +1,24 @@
 # author: irsanwinarto@gmail.com
 
+pac_clean() {
+    # sudo pacman -Scc
+    sudo pacman -Scc
+
+    local to_clean=$(pacman -Qtdq)
+    if [[ ! -z $to_clean ]]; then
+        pacman -Rnss $to_clean
+    fi
+} 
+
+
+push_dots() {
+    local repo='~/Repositories/dotfiles/'
+    eval repo=$repo
+    git -C $repo commit -a -m "${*:-Update some dot file(s)}"
+    git -C $repo push
+}
+
+
 set_prompts() {
     local PS1_SYMBOL=' '
     local PS2_SYMBOL='>>'
@@ -17,25 +36,6 @@ set_prompts() {
 }
 
 
-push_dots() {
-    local repo='~/Repositories/dotfiles/'
-    eval repo=$repo
-    git -C $repo commit -a -m "${*:-Update some dot file(s)}"
-    git -C $repo push
-}
-
-
-pac_clean() {
-    # sudo pacman -Scc
-    sudo pacman -Scc
-
-    local to_clean=$(pacman -Qtdq)
-    if [[ ! -z $to_clean ]]; then
-        pacman -Rnss $to_clean
-    fi
-} 
-
-
 set_prompts
 unset -f set_prompts
 
@@ -44,7 +44,7 @@ AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
 alias ls='ls --color=auto'
-alias makecleanpkg='makepkg -sri && rm -rf pkg src'
+alias makecleanpkg='makepkg -sri; rm -rf pkg src'
 alias pacclean='pac_clean'
 alias pacremove='sudo pacman -Rnss'
 alias pacupdate='sudo pacman -Syu'
