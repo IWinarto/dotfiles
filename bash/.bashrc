@@ -19,25 +19,30 @@ push_dots() {
 }
 
 
+colour() {
+    # colour escape sequence is \e[<sequences>m
+    local FOREGROUND='38;5'
+    echo "\\e[${FOREGROUND};$1m"
+}
+
+
 set_prompts() {
-    local PS1_SYMBOL=' '
     local PS2_SYMBOL='>>'
 
-    local PS1_COLOR=147
+    local PS1_COLOR_U=35
+    local PS1_COLOR_W=67
     local PS2_COLOR=202
 
-    local RESET='0'
-    local FOREGROUND='38;5'
+    local RESET='\e[0m'
 
-    # colour escape sequence is \e[<sequences>m
     # \u is username; \w is current working directory
-    PS2="\e[${FOREGROUND};${PS2_COLOR}m${PS2_SYMBOL} \e[${RESET}m"
-    PS1="\e[${FOREGROUND};${PS1_COLOR}m\u${PS1_SYMBOL}\w ${PS2}"
+    PS2="$(colour $PS2_COLOR)${PS2_SYMBOL} ${RESET}"
+    PS1="$(colour $PS1_COLOR_U)\u $(colour $PS1_COLOR_W)\w ${PS2}"
 }
 
 
 set_prompts
-unset -f set_prompts
+unset -f set_prompts colour
 
 # just for easy referencing when downloading from the AUR 
 AUR='https://aur.archlinux.org'
