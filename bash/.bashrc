@@ -38,7 +38,7 @@ set_prompts() {
 
     # \u is username; \w is current working directory
     PS2="${BOLD}$(colour $PS2_COLOR)${PS2_SYMBOL} ${RESET}"
-    PS1="$(colour $PS1_COLOR_U)\u $(colour $PS1_COLOR_W)\w ${PS2}"
+    PS1="${BOLD}$(colour $PS1_COLOR_U)\u $(colour $PS1_COLOR_W)\w ${PS2}"
 }
 
 
