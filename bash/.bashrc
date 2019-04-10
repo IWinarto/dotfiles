@@ -29,14 +29,15 @@ colour() {
 set_prompts() {
     local PS2_SYMBOL='>>'
 
-    local PS1_COLOR_U=35
-    local PS1_COLOR_W=67
+    local PS1_COLOR_U=71
+    local PS1_COLOR_W=74
     local PS2_COLOR=202
 
     local RESET='\e[0m'
+    local BOLD="\\[$(tput bold)\\]"
 
     # \u is username; \w is current working directory
-    PS2="$(colour $PS2_COLOR)${PS2_SYMBOL} ${RESET}"
+    PS2="${BOLD}$(colour $PS2_COLOR)${PS2_SYMBOL} ${RESET}"
     PS1="$(colour $PS1_COLOR_U)\u $(colour $PS1_COLOR_W)\w ${PS2}"
 }
 
