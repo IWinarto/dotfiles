@@ -1,13 +1,13 @@
 # author: irsanwinarto@gmail.com
 
 pac_clean() {
-    # sudo pacman -Scc
-    sudo pacman -Scc
-
     local to_clean=$(pacman -Qtdq)
     if [[ ! -z $to_clean ]]; then
         pacman -Rnss $to_clean
     fi
+
+    # sudo pacman -Scc
+    sudo pacman -Scc
 } 
 
 
