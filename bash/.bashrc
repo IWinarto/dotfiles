@@ -6,7 +6,6 @@ pac_clean() {
         pacman -Rnss $to_clean
     fi
 
-    # sudo pacman -Scc
     sudo pacman -Scc
 } 
 
