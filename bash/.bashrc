@@ -1,8 +1,9 @@
 # author: irsanwinarto@gmail.com
 
 pac_clean() {
+    local to_clean=$(pacman -Qtdq)
 
-    if [[ ! -z $(pacman -Qtdq) ]]; then
+    if [[ ! -z $to_clean ]]; then
         pacman -Rnss $to_clean
     fi
 
