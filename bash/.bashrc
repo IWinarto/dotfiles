@@ -21,7 +21,7 @@ push_dots() {
 colour() {
     # colour escape sequence is \e[<sequences>m
     local FOREGROUND='38;5'
-    echo "\\e[${FOREGROUND};$1m"
+    echo "\\[\\e[${FOREGROUND};$1m\\]"
 }
 
 
@@ -32,7 +32,7 @@ set_prompts() {
     local PS1_COLOUR_W=74
     local PS2_COLOUR=202
 
-    local RESET='\e[0m'
+    local RESET='\[\e[0m\]'
     local BOLD="\\[$(tput bold)\\]"
 
     # \u is username; \w is current working directory
