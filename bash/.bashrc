@@ -4,7 +4,7 @@ pac_clean() {
     local to_clean=$(pacman -Qtdq)
 
     if [[ ! -z $to_clean ]]; then
-        pacman -Rnss $to_clean
+        sudo pacman -Rnss $to_clean
     fi
 
     sudo pacman -Scc
