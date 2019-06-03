@@ -49,7 +49,6 @@ AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
 alias ls='ls --color=auto'
-alias makecleanpkg='makepkg -sri; rm -rf pkg src'
 alias pacclean='pac_clean'
 alias pacremove='sudo pacman -Rnss'
 alias pacupdate='sudo pacman -Syu'
