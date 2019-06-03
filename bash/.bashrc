@@ -12,7 +12,7 @@ pac_clean() {
 
 
 push_dots() {
-    eval repo='~/Repositories/dotfiles/'
+    eval local repo='~/Repositories/dotfiles/'
     git -C $repo commit -a -m "${*:-Update some dot file(s)}"
     git -C $repo push
 }
