@@ -18,6 +18,12 @@ push_dots() {
 }
 
 
+run() {
+    nohup >/dev/null "${@}" &
+    exit
+}
+
+
 colour() {
     # colour escape sequence is \e[<sequences>m
     local FOREGROUND='38;5'
