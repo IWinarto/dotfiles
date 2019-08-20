@@ -39,7 +39,7 @@ set_prompts() {
     local PS2_COLOUR=202
 
     local RESET='\[\e[0m\]'
-    local BOLD="\\[$(tput bold)\\]"
+    local BOLD=\\[$(tput bold)\\]
 
     # \u is username; \w is current working directory
     PS2="${BOLD}$(colour $PS2_COLOUR)${PS2_SYMBOL} ${RESET}"
