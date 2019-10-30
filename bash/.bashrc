@@ -54,11 +54,11 @@ unset -f set_prompts colour
 AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
+alias llpp='run llpp'
 alias ls='ls --color=auto'
 alias mkp='makepkg -cris'
 alias pacclean='pac_clean'
 alias pacremove='sudo pacman -Rnss'
 alias pacupdate='sudo pacman -Syu'
 alias pushdots='push_dots'
-alias read='run llpp'
 alias watch='run mpv'
