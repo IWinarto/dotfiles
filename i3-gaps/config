@@ -25,6 +25,7 @@
     set $mail mailspring
     set $menu ulauncher
     set $term alacritty
+    set $backup_term st
     set $volumecontrol pasc
 
 
@@ -34,6 +35,9 @@
 
     # start a terminal
     bindsym $mod+Return exec $term
+
+    # start st terminal
+    bindsym $mod+u exec $backup_term
 
     # start ide
     bindsym $mod+i exec $ide
