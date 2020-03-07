@@ -8,7 +8,8 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'kana/vim-textobj-user'
     Plug 'kana/vim-textobj-line'
     Plug 'sheerun/vim-polyglot'
-    Plug 'itchyny/lightline.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'easymotion/vim-easymotion'
 
     " Colorschemes
@@ -22,7 +23,6 @@ call plug#begin("~/.local/share/nvim/plugged/")
     Plug 'danilo-augusto/vim-afterglow'
     Plug 'ajh17/Spacegray.vim'
     Plug 'w0ng/vim-hybrid'
-    Plug 'tyrannicaltoucan/vim-deep-space'
     Plug 'kristijanhusak/vim-hybrid-material'
     Plug 'mhartington/oceanic-next'
     " Plug 'mkarmona/colorsbox'
@@ -75,11 +75,10 @@ au ColorScheme * hi LineNr ctermbg=none guibg=none
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme * hi EndOfBuffer ctermbg=none guibg=none
 
-" colorscheme tender
 " colorscheme hybrid
 " colorscheme deep-space
 " colorscheme hybrid_material
-" colorscheme afterglow
+colorscheme afterglow
 " colorscheme onedark
 " colorscheme codedark
 " colorscheme jellybeans
@@ -90,11 +89,18 @@ au ColorScheme * hi EndOfBuffer ctermbg=none guibg=none
 " colorscheme OceanicNext
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
-colorscheme spacegray
-let g:spacegray_use_italics = 1
-let g:spacegray_low_contrast = 1
+" colorscheme spacegray
+" let g:spacegray_use_italics = 1
+" let g:spacegray_low_contrast = 1
 
-let g:lightline = { 'colorscheme': 'wombat', } 
+let g:airline_theme = 'deus'
+let g:airline_left_sep = ''
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+
+
+" ============================== Vim Polyglot =============================== "
+let g:python_highlight_space_errors = 0
 
 
 " ================================ Keys ===================================== "
