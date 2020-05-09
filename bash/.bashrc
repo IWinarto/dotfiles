@@ -47,6 +47,22 @@ set_prompts() {
 }
 
 
+rdp() {
+    cat "$@" | \
+    awk '/DesiredHRES/ {print "DesiredHRES=2560"; next} \
+         /DesiredVRES/ {print "DesiredVRES=1440"; next} \
+         /TWIMode/     {print "TWIMode=Off";      next} \
+                       {print}' \
+         RS='\r\n' > temp
+
+    mv temp "$@"
+
+    cat "$@"
+
+    run_scaled --scale=1.5 /opt/Citrix/ICAClient/wfica "$@"
+}
+
+
 set_prompts
 unset -f set_prompts colour
 
@@ -63,7 +79,7 @@ alias pacremove='sudo pacman -Rnss'
 alias pacupdate='sudo pacman -Syu'
 alias pushdots='push_dots'
 
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/share/powerline/bindings/bash/powerline.sh
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+# . /usr/share/powerline/bindings/bash/powerline.sh

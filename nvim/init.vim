@@ -61,6 +61,7 @@ set linespace=5
 set fileencoding=utf-8
 set fillchars+=vert:\|
 set autochdir
+set clipboard^=unnamed,unnamedplus
 
 
 " ================================ Theme ==================================== "
@@ -94,7 +95,9 @@ colorscheme afterglow
 " let g:spacegray_low_contrast = 1
 
 let g:airline_theme = 'deus'
-let g:airline_left_sep = ''
+" let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
