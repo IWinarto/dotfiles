@@ -71,7 +71,7 @@ AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
 alias llpp='run llpp'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first -X'
 alias mkp='makepkg -cris'
 alias mpv='run mpv'
 alias pacclean='pac_clean'
