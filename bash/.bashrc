@@ -70,6 +70,7 @@ unset -f set_prompts colour
 AUR='https://aur.archlinux.org'
 
 alias cds='cd ~/Programming/Shell/'
+alias cls=clear
 alias llpp='run llpp'
 alias ls='ls --color=auto --group-directories-first -X'
 alias mkp='makepkg -cris'
