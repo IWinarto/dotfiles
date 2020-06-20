@@ -62,6 +62,7 @@ set fileencoding=utf-8
 set fillchars+=vert:\|
 set autochdir
 set clipboard^=unnamed,unnamedplus
+set iskeyword-=_
 
 
 " ================================ Theme ==================================== "
