@@ -70,6 +70,7 @@ unset -f set_prompts colour
 AUR='https://aur.archlinux.org'
 
 alias cc='gcc -Wall -pedantic -std=c17'
+alias cg='gcc -Wall -pedantic -std=gnu17'
 alias cds='cd ~/Programming/Shell/'
 alias cls=clear
 alias llpp='run llpp'
